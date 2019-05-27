@@ -21,44 +21,24 @@
 # 7. if is not then check if tart is > than middle
 # start_index = middle +1
 # 8. close loop
-#
-# 
-
 
 def binary_search(target, array)
 	#Your code here
-	index = 0
-	last_index= array.length -1
-
-	middle = array.length/2
-	if array[middle] == target
-		return middle
-	end
-	while target < middle
-		i =0
-		middle = array.length/2
-        if array[i] == target
-            return middle
-        elsif array[i] > target
-            target = i - 1
-        elsif array[i] < target
-			index = i + 1
-		else
-            return target
-        end
-	end
-	return false
+	low = 0
+  high = array.length - 1
+  while low <= high
+    mid = ((low+high)/2)
+    case target <=> array[mid]
+    when 1
+      low = mid +1
+    when -1
+      high = mid -1
+    else
+      return mid
+    end
+  end
+  return -1
 end
-# 	middle = array.length/2
-# 	if target = middle 
-# 		return target
-# 	elsif middle < target
-# 	end
-# 	middle = array.length/2
-#  	target = middle 
-# 		return target
-# 	end
-# end
 
 test_array = (100..200).to_a
 puts binary_search(135, test_array) == 35

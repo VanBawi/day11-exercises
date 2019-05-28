@@ -3,8 +3,32 @@
 # The method should use the bubble sort algorithm to return an array with its elements arranged in increasing order
 # You may not use the Array#sort method in your solution
 
-# Write Your method code here
+# psudocode here
+#give new array.length
+# loop start to iterate one by one and set swapped = false
+# array length times do iteration i
+#if array of i > array i move to the next
+# if it is true swap the place
+# set swapped = true
+# and end the loop by break if not swapped
+# end the loop and put array 
 
+
+# Write Your method code here
+def bubble_sort(array)
+    new = array.length
+    loop do
+       swapped = false
+       (new-1).times do |i|
+            if array[i] > array[i +1]
+                array[i], array[i +1] = array[i +1], array[i]
+                swapped = true
+            end
+        end
+        break if not swapped
+    end
+    array
+ end
 # Driver Code: Do not edit under this line
 
 # check_solution runs a single test case and prints whether it was
